@@ -19,6 +19,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			intkey, err := strconv.Atoi(key)
 			if err == nil {
 				time.Sleep(time.Duration(intkey) * time.Millisecond)
+				fmt.Fprintf(w, "Sleep for %sms completed\n", key)
 			}
 		}
 	}
